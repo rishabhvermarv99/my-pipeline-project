@@ -24,11 +24,6 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
       
-    - name: Set up Node.js 16.x
-      uses: actions/setup-node@v2
-      with:
-        node-version: 16
-      
     - name: Push Docker image
       run: |
         docker tag pythonmain:latest rishabhverma99/my-project-pipeline
