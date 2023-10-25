@@ -1,11 +1,11 @@
-# Use the official OpenJDK base image
-FROM openjdk:11-jre-slim
+# Use an official Python runtime as a parent image
+FROM python:3.8-slim
 
-# Set the working directory in the container
+# Set the working directory to /app
 WORKDIR /app
 
-# Copy the compiled Java application JAR file to the container
-COPY HelloWorld.class /app
+# Copy the current directory contents into the container at /app
+COPY . /app
 
-# Run the Java application
-CMD ["java", "HelloWorld"]
+# Run hello.py when the container launches
+CMD ["python", "app.py"]
